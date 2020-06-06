@@ -6,27 +6,15 @@
 
 2.	You can install it on Winodws or Linux host machine.
 
-3.	Install pre-requisites before install of VirtualBox and Vagrant.
+3. Use vagrant-virtualbox-install.sh script to pefrom following tasks.
 
-    yum install compat-libstdc++-33 SDL
-    
-    yum install gcc kernel-devel make libGL qt qt-devel libXmu
-    
-Use vagrant-virtualbox-install.sh script to pefrom following tasks.
-    
-4.	Download and Install VirtualBox. 
-
-    wget https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0-6.0.4_128413_el7-1.x86_64.rpm
-    
-    rpm -ivh VirtualBox-6.0-6.0.4_128413_el7-1.x86_64.rpm
-    
-5.	Download and Install Vagrant.
-
-    wget https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.rpm
-    
-    rpm -ivh vagrant_2.2.4_x86_64.rpm
+    a. Install pre-requisites before install of VirtualBox and Vagrant.
+   
+    b. Download and Install VirtualBox. 
+   
+    c. Download and Install Vagrant.
   
-6. Create Vagrantfile to setup 1 Master node and 3 worker node.
+4. Create Vagrantfile to setup 1 Master node and 3 worker node.
 
     kubemaster - 192.168.56.2 (6G RAM & 4 vCPU)
     
@@ -36,7 +24,7 @@ Use vagrant-virtualbox-install.sh script to pefrom following tasks.
     
     worker3    - 192.168.56.5 (2G RAM & 2 vCPU)
 
-6. Create configure.sh file which will perform following required configuration before installing Kubernetes
+5. Create configure.sh file which will perform following required configuration before installing Kubernetes
 
     a. Disable SELINUX using sentenforce and udpate the config file
     
@@ -52,26 +40,26 @@ Use vagrant-virtualbox-install.sh script to pefrom following tasks.
 
     ./configure.sh
      
- 7. Kubenetes Installation using kubeadm 
+ 6. Kubenetes Installation using kubeadm 
  
     kubeadm init --apiserver-advertise-address=192.168.56.2 --pod-network-cidr 10.32.0.0/12
     
- 8. Copy kube configuration files.
+ 7. Copy kube configuration files.
  
      mkdir -p $HOME/.kube
      cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
      chown $(id -u):$(id -g) $HOME/.kube/config
      
-  9. Add Bash completion to autocomplete kubenetes commands.
+ 8. Add Bash completion to autocomplete kubenetes commands.
   
       echo 'source <(kubectl completion bash)' >>~/.bashrc 
       source .bashrc
       
-  10. Install network plugin for Kubernetes. I am using weave-net here.
+ 9. Install network plugin for Kubernetes. I am using weave-net here.
   
        kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
        
-  11. Perform the step 6 on worker nodes and execute kubeadm join to join the kubernetes cluster.
+ 10. Perform the step 6 on worker nodes and execute kubeadm join to join the kubernetes cluster.
   
       kubeadm join 192.168.56.2:6443 --token 84p35t.tawua5uqro1rwo0u \
     --discovery-token-ca-cert-hash sha256:d2bac1f7591663167b73ebc88ceb2d46b2b1f98a048fedec64899fdd90fa2ad9

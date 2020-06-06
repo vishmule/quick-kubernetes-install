@@ -4,8 +4,8 @@
 
 ## Install following pre-requisites required for VirtualBox Installation
 
-yum install compat-libstdc++-33 SDL wget
-yum install gcc kernel-devel make libGL qt qt-devel libXmu
+yum install -y compat-libstdc++-33 SDL wget
+yum install -y gcc kernel-devel make libGL qt qt-devel libXmu
 
 ## Download and Install VirtualBox
 

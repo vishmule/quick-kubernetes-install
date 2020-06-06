@@ -1,4 +1,6 @@
 #!/bin/bash
+# Author: vishmule
+# Configure VMs before installation of Kubernetes components
 
 ## Disable Selinux
 setenforce 0

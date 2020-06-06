@@ -47,6 +47,7 @@
  7. Copy kube configuration files.
  
      mkdir -p $HOME/.kube
+     
      cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
      chown $(id -u):$(id -g) $HOME/.kube/config
      
@@ -59,7 +60,7 @@
   
        kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
        
- 10. Perform the step 6 on worker nodes and execute kubeadm join to join the kubernetes cluster.
+ 10. Perform the step 5 on worker nodes and execute kubeadm join to join the kubernetes cluster.
   
       kubeadm join 192.168.56.2:6443 --token 84p35t.tawua5uqro1rwo0u \
     --discovery-token-ca-cert-hash sha256:d2bac1f7591663167b73ebc88ceb2d46b2b1f98a048fedec64899fdd90fa2ad9

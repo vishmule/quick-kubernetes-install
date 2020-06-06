@@ -12,7 +12,9 @@
     
     yum install gcc kernel-devel make libGL qt qt-devel libXmu
     
-4.	Download and Install VirtualBox.Use vagrant-virtualbox-install.sh script to pefrom following tasks.
+# Use vagrant-virtualbox-install.sh script to pefrom following tasks.
+    
+4.	Download and Install VirtualBox. 
 
     wget https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0-6.0.4_128413_el7-1.x86_64.rpm
     

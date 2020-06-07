@@ -6,6 +6,20 @@
 
 2.	You can install it on Winodws or Linux host machine.
 
+3. For Windows Host VM use vagrant-virtualbox-windows file
+
+4. Vagrant-virtualbox-Windows file perform following taks.
+    
+    a. Install choco package manager on Windows.
+    
+    b. Install VirtualBox
+    
+    c. Install Vagrant
+    
+    d. Install VirtualBox guest plugin
+
+4. For Linux host VM use vagrant-virtualbix-install.sh file.
+
 3. Use vagrant-virtualbox-install.sh script to pefrom following tasks.
 
     a. Install pre-requisites before install of VirtualBox and Vagrant.
@@ -55,6 +69,7 @@
  8. Add Bash completion to autocomplete kubenetes commands.
   
       echo 'source <(kubectl completion bash)' >>~/.bashrc 
+      
       source .bashrc
       
  9. Install network plugin for Kubernetes. I am using weave-net here.

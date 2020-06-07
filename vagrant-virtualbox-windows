@@ -1,0 +1,27 @@
+# Author: vishmule
+## These steps will install VirtualBox and Vagrant on Windows VM
+
+# Install chocolatey package manager for Windows.
+
+  Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+
+# Install VirtuaBox on Winodws
+
+  choco install virtualbox -y
+  
+# Install Vagrant on Windows
+  
+   choco install vagrant -y
+   
+# Install Virtualbox guest plugin for Vagrant
+  
+   vagrant plugin install vagrant-vbguest
+   
+   vagrant reload
+   
+# Download Wget package for Windows.
+
+   http://downloads.sourceforge.net/gnuwin32/wget-1.11.4-1-setup.exe 
+   
+ 
+

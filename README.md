@@ -1,6 +1,6 @@
 
 
-# Quickly Setup Infrastructure VMs and Install Kubernetes
+# Quickly Setup Infrastructure VMs and Install Multi-node Kubernetes
 
 1.	We will create Kubernetes infrastructure using VirtualBox and Vagrant.
 
